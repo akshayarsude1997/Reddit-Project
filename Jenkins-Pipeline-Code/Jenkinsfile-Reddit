@@ -62,7 +62,7 @@ pipeline{
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image akshayarsude1997/reddit:latest > trivy.txt"
+                sh "trivy image akshayarsude1997/reddit:${BUILD_NUMBER} > trivy.txt"
             }
         }
         stage('Update Deployment file') {
